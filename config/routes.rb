@@ -1,15 +1,15 @@
 FriendsOfLocal::Application.routes.draw do
-  get "static_pages/home"
 
-  get "static_pages/help"
+  get "users/new"
 
-  get "static_pages/about"
+  root :to => 'static_pages#home'
+  match '/signup', to: 'users#new'
+  match '/about', to: 'static_pages#about'
+  match '/help', to: 'static_pages#help'
+  match '/privacy', to: 'static_pages#privacy'
+  match '/contact', to: 'static_pages#contact'
+  match '/report', to: 'static_pages#report'
 
-  get "static_pages/privacy"
-
-  get "static_pages/contact"
-
-  get "static_pages/report"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
