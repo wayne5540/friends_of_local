@@ -14,7 +14,6 @@ FriendsOfLocal::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/report', to: 'static_pages#report'
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

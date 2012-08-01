@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120721134923) do
+ActiveRecord::Schema.define(:version => 20120727043709) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -21,9 +21,25 @@ ActiveRecord::Schema.define(:version => 20120721134923) do
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.string   "introduce"
+    t.string   "trip_plan"
+    t.string   "trip_detail"
+    t.string   "contact"
+    t.string   "profile_photo"
+    t.string   "country"
+    t.string   "city"
+    t.string   "language"
   end
 
+  add_index "users", ["city"], :name => "index_users_on_city"
+  add_index "users", ["contact"], :name => "index_users_on_contact"
+  add_index "users", ["country"], :name => "index_users_on_country"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["introduce"], :name => "index_users_on_introduce"
+  add_index "users", ["language"], :name => "index_users_on_language"
+  add_index "users", ["profile_photo"], :name => "index_users_on_profile_photo"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+  add_index "users", ["trip_detail"], :name => "index_users_on_trip_detail"
+  add_index "users", ["trip_plan"], :name => "index_users_on_trip_plan"
 
 end

@@ -1,3 +1,95 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin border{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+
+.profile_photo{
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	float: left;
+	img{
+		height: 190px;
+		width: 190px;
+	}
+}
+.basic_info{
+	float: left;
+	padding-left: 10px;
+	h1{
+		font-size: 3em;
+  		text-align: left;
+  		display: inline;
+	}
+}
+
+.clear{
+	clear: both;
+}
+.information{
+	
+	h2{
+		text-align: left;
+		margin-top: 15px;
+		margin-bottom:15px;
+	}
+	textarea{
+		height:250px;
+	}
+
+}
+.form_text{
+	height:250px;
+}
+
+#edit_profile{
+	float: right;
+	position: relative;
+	margin-right: 15px;
+}
+
+.change_photo{
+	height: 150px;
+}
+
+/* Users page */
+
+.users{
+
+}
+.users_photo{
+	display: inline-block;
+	height: 150px;
+	width: 150px;
+	float: left;
+}
+.grapper{
+	margin-top: 30px;
+	-moz-box-shadow:0px 0px 2px #06C;
+	-webkit-box-shadow:0px 0px 2px #06C ;
+	box-shadow:0px 0px 2px #06C;
+
+	@include border;
+	&:hover{
+		-moz-box-shadow:0px 0px 10px #06C;
+		-webkit-box-shadow:0px 0px 10px #06C ;
+		box-shadow:0px 0px 10px #06C;
+		cursor: pointer;
+	}
+	img{
+		padding-left: 3px;
+		padding-top: 3px;
+		@include border;
+	}
+}
+.div_button{
+	position:absolute;
+	display: block;
+	height:100%;
+	width:100%;
+}

@@ -1,5 +1,5 @@
-<% provide(:title, 'Sign up') %>
-<h1>註冊</h1>
+<% provide(:title, "Edit user") %> 
+<h1>設定您的帳號</h1>
 
 <div class="row">
   <div class="span6 offset3">
@@ -7,15 +7,11 @@
       <%= render 'shared/error_messages' %>
 
       
-
       <%= f.label :name, "姓名" %>
       <%= f.text_field :name %>
 
       <%= f.label :email, "電子信箱(帳號名稱)" %>
       <%= f.text_field :email %>
-
-      <%= f.label :sex, "性別" %>
-      <%= f.select :sex ,options_for_select([['先生','male'],['女士','female']]) %>
 
       <%= f.label :country, "所在國家(區域)" %>
       <%= f.select :country ,options_for_select([['台灣(Taiwan)','台灣(Taiwan)'],['日本(Japan)','日本(Japan)'],['南韓(South Korea)','南韓(South Korea)'],['中國(China)','中國(China)'],['歐洲(Europe)','歐洲(Europe)'],['美洲(America)','美洲(America)'],['大洋洲(Oceania)','大洋洲(Oceania)'],['非洲(Africa)','非洲(Africa)'],['其他(Others)','其他(Others)']]) %>
@@ -26,16 +22,17 @@
       <%= f.label :language, "語言" %>
       <%= f.text_field :language %>
 
-
-
       <%= f.label :password, "密碼" %>
       <%= f.password_field :password %>
 
       <%= f.label :password_confirmation, "確認密碼" %>
       <%= f.password_field :password_confirmation %>
 
-      
-      <%= f.submit "建立帳號", class: "btn btn-large btn-primary" %>
+      <img src=<%= @user.profile_photo || "http://goo.gl/gdibQ" %> alt=<%= @user.name %> class="change_photo">
+      <%= f.label :profile_photo, "更換大頭貼(網路圖片連結)" %>
+      <%= f.text_field :profile_photo %>
+
+      <%= f.submit "確定更改", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>

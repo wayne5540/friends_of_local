@@ -1,0 +1,40 @@
+    <div class="information">
+      <div id="introduce">
+        <h2>
+          地陪簡介：
+        </h2>
+        <%= form_for(@user) do |f| %>
+          <%= f.text_field :introduce, class: "form_text" %>
+          <%= f.submit "確定更改", class: "btn" %>
+        
+      </div>
+      <div id="trip_plan">
+        <h2>
+          旅行安排或建議：
+        </h2>
+        <%= f.text_field :trip_plan, class: "form_text" %>
+        <%= f.submit "確定更改", class: "btn" %>
+        
+      </div>
+      <div id="guide">
+        <h2>
+          地陪服務細節：
+        </h2>
+          <%= f.text_field :trip_detail, class: "form_text" %>
+          <%= f.submit "確定更改", class: "btn" %>
+      </div>
+      <div id="contact">
+        <h2>
+          聯絡方式：
+        </h2>
+          <%= f.text_field :contact, class: "form_text" %>
+          <%= f.submit "確定更改", class: "btn" %>
+        <% end %>
+        <script type="text/javascript">
+          $('#user_introduce').wysihtml5();
+          $('#user_trip_plan').wysihtml5();
+          $('#user_trip_detail').wysihtml5();
+          $('#user_contact').wysihtml5();
+        </script>
+      </div>
+    </div>

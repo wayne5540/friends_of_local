@@ -2,10 +2,15 @@
 <div class="center hero-unit">
   <h1>Welcome to Local Friends</h1>
 
-  <form action="demo_form.asp">
-			找地陪？ <input type="search" name="find_friends" />
-			<input type="submit" />
-		</form>
+	<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
+		<p>
+			<%= select_tag "search" ,options_for_select([['台灣(Taiwan)','台灣(Taiwan)'],['日本(Japan)','日本(Japan)'],['南韓(South Korea)','南韓(South Korea)'],['中國(China)','中國(China)'],['歐洲(Europe)','歐洲(Europe)'],['美洲(America)','美洲(America)'],['大洋洲(Oceania)','大洋洲(Oceania)'],['非洲(Africa)','非洲(Africa)'],['其他(Others)','其他(Others)']], params[:search]) %>
+		    <%= submit_tag "找地陪", :name => nil, class: "btn btn-large btn-primary" %>
+		</p>
+    <% end %>
 
-  <%= link_to "當地陪!", signup_path, class: "btn btn-large btn-primary" %>
+
+  <% if !signed_in? %>
+  	<%= link_to "當地陪!", signup_path, class: "btn btn-large btn-primary" %>
+  <% end %>
 </div>

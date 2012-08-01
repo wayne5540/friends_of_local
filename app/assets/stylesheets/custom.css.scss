@@ -1,5 +1,5 @@
 @import "bootstrap";
-
+@import "bootstrap-wysihtml5";
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -67,7 +67,7 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 2.4em;
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -78,6 +78,23 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+
+.subtitle{
+  diaplay: inline;
+  float: left;
+  color: white;
+  font-size: 1.6em;
+  text-align: left;
+  letter-spacing: 1px;
+  padding-top: 16px;
+  margin-bottom:9px;
+}
+
+.ulstyle {
+  font-size: 1.2em;
+  padding-top: 10px;
 }
 
 /* footer */

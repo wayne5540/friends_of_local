@@ -1,14 +1,40 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
-  <aside class="span4">
-    <section>
+  <div class="">
+    <div class="profile_photo">
+      <img src=<%= @user.profile_photo || "http://goo.gl/gdibQ" %> alt=<%= @user.name %>>
+    </div>
+    <% if current_user?(@user) %>
+    <div id="edit_profile">
+        <%= link_to "修改個人資料", edit_user_path(current_user) %>
+    </div>
+    <% end %>
+    <div class="basic_info">
       <h1>
         <%= @user.name %>
       </h1>
       <span>
-      	<%= @user.email %>
-      	<%= @user.sex %>
+        <%= @user.sex %>
       <span>
-    </section>
-  </aside>
+      
+      <p>
+        <b>所在國家(區域):</b> <%= @user.country %>
+      </p>
+      <p><b>所在城市:</b> <%= @user.city %></p>
+      <p>
+        <b>使用語言:</b><%= @user.language %>
+      </p>
+    </div>
+    <div class="clear"></div>
+    <% if current_user?(@user) %>
+      <%= link_to "修改旅行資料", user_path(current_user), :remote => true,  :style => 'float: right;',  "data-type" => "script" %>
+    <% end %>
+    <div id="information" class="information">
+      <%= render 'users/introduce' %>
+      <%= render 'users/trip_plan' %>
+      <%= render 'users/trip_detail' %>
+      <%= render 'users/contact' %>
+    </div>
+  </div>
 </div>
