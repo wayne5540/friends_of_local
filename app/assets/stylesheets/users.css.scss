@@ -73,13 +73,12 @@
 	-moz-box-shadow:0px 0px 2px #06C;
 	-webkit-box-shadow:0px 0px 2px #06C ;
 	box-shadow:0px 0px 2px #06C;
-
 	@include border;
 	&:hover{
 		-moz-box-shadow:0px 0px 10px #06C;
 		-webkit-box-shadow:0px 0px 10px #06C ;
 		box-shadow:0px 0px 10px #06C;
-		cursor: pointer;
+
 	}
 	img{
 		padding-left: 3px;
@@ -90,6 +89,6 @@
 .div_button{
 	position:absolute;
 	display: block;
-	height:100%;
-	width:100%;
+	height:150px;
+	width:940px;
 }
