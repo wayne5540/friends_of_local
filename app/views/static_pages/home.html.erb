@@ -1,7 +1,8 @@
 <% provide(:title, 'Home') %>
 <div class="center hero-unit">
   <h1>Welcome to Local Friends</h1>
-
+</br>
+  <p><b>如果您是熱愛旅行的朋友</b>，您可以在Local Friends找到世界各地的同好帶您走訪他們最熟悉的故鄉，提供您最在地最特別的體驗，現在就搜尋地區吧。</p>
 	<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
 		<p>
 			<%= select_tag "search" ,options_for_select([['台灣(Taiwan)','台灣(Taiwan)'],['日本(Japan)','日本(Japan)'],['南韓(South Korea)','南韓(South Korea)'],['中國(China)','中國(China)'],['歐洲(Europe)','歐洲(Europe)'],['美洲(America)','美洲(America)'],['大洋洲(Oceania)','大洋洲(Oceania)'],['非洲(Africa)','非洲(Africa)'],['其他(Others)','其他(Others)']], params[:search]) %>
@@ -11,6 +12,11 @@
 
 
   <% if !signed_in? %>
+
+    </br>
+    <h2>---OR---</h2>
+
+    <p><b>如果您是熱愛分享的朋友</b>，您可以利用本平台找到更多您能夠幫助的旅行者，分享你對在地的知識與經驗，行程規劃和收費與否取決於您的選擇，歡迎加入Local Friends成為地陪，一起創造旅行的美好回憶。</p>
   	<%= link_to "當地陪!", signup_path, class: "btn btn-large btn-primary" %>
   <% end %>
 </div>
