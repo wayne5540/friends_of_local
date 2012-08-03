@@ -15,9 +15,9 @@ class User < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => { :country => search })
+      find(:all, :conditions => { :country => search }, :order => 'updated_at DESC')
     else
-      find(:all)
+      find(:all, :order => 'updated_at DESC')
     end
   end
 

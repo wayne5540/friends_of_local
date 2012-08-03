@@ -3,7 +3,7 @@
 <div class="row">
   <div class="">
     <div class="profile_photo">
-      <img src=<%= @user.profile_photo || "http://goo.gl/gdibQ" %> alt=<%= @user.name %>>
+      <img src=<%if @user.profile_photo==""%><%= "http://goo.gl/gdibQ" %><%else %> <%= @user.profile_photo || "http://goo.gl/gdibQ" %><%end%> alt=<%= @user.name %>>
     </div>
     <% if current_user?(@user) %>
     <div id="edit_profile">

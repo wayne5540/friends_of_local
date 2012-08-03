@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user.updating_password = true
     if @user.save
       sign_in @user
-      flash[:success] = "恭喜您註冊成功！"
+      flash[:success] = "恭喜您註冊成功！試著編輯您的旅行資料吧！或是修改基本資料更改大頭貼唷！"
       redirect_to @user
     else
       render 'new'
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:success] = "設定已更新"
+      flash[:success] = "您的設定已更新"
       sign_in @user
       redirect_to @user
     else
@@ -39,11 +39,6 @@ class UsersController < ApplicationController
   def index
     @users = User.search(params[:search])
 
-  end
-
-  #test
-  def say
-    puts "hellooooooooo!!!"
   end
 
 

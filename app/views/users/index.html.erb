@@ -1,13 +1,12 @@
 <h1>地陪</h1>
 
-
 <div class = "users">
   
   <% @users.each do |user| %>
 	  <div class="grapper">
-	  	<a class="div_button" href="users/<%= user.id %>"></a>
+	  	<a class="div_button" href="users/<%= user.id %>">
 	    <div class="users_photo">
-	      <img src=<%= user.profile_photo || "http://goo.gl/gdibQ" %> alt=<%= user.name %>>
+	      <img src=<%if user.profile_photo==""%><%= "http://goo.gl/gdibQ" %><%else %> <%= user.profile_photo || "http://goo.gl/gdibQ" %><%end%> alt=<%= user.name %>>
 	    </div>
 	    <div class="basic_info" >
 	      <h1>
@@ -24,11 +23,14 @@
 	        <b>使用語言:</b><%= user.language %>
 	      </p>
 	      <p>
-	        <b>地陪簡介:</b><%= raw user.introduce %>
+	        <b>地陪簡介:</b>
+	        <%= raw user.introduce %>
 	      </p>
 	    </div>
+	    
 	    <div class="clear"></div>
 	  </div>
+	  </a>
   <% end %>
 
 </div>

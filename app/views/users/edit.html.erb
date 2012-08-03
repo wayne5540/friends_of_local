@@ -28,7 +28,7 @@
       <%= f.label :password_confirmation, "確認密碼" %>
       <%= f.password_field :password_confirmation %>
 
-      <img src=<%= @user.profile_photo || "http://goo.gl/gdibQ" %> alt=<%= @user.name %> class="change_photo">
+      <img src=<%if @user.profile_photo==""%><%= "http://goo.gl/gdibQ" %><%else %> <%= @user.profile_photo || "http://goo.gl/gdibQ" %><%end%> alt=<%= @user.name %> class="change_photo">
       <%= f.label :profile_photo, "更換大頭貼(網路圖片連結)" %>
       <%= f.text_field :profile_photo %>
 

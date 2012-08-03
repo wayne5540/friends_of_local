@@ -19,4 +19,18 @@
     <p><b>如果您是熱愛分享的朋友</b>，您可以利用本平台找到更多您能夠幫助的旅行者，分享你對在地的知識與經驗，行程規劃和收費與否取決於您的選擇，歡迎加入Local Friends成為地陪，一起創造旅行的美好回憶。</p>
   	<%= link_to "當地陪!", signup_path, class: "btn btn-large btn-primary" %>
   <% end %>
+
+  <div id="fb-root"><p></p></div>
+  <hr>
+  <h2>---AND---</h2>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=135555543221291";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <p>加入粉絲團，讓大家幫你一起找地陪&旅行家</p>
+  <div class="fb-like-box" data-href="https://www.facebook.com/LocalFriendsTW" data-width="570" data-height="190" data-show-faces="true" data-stream="false" data-header="false"></div>
+
 </div>
