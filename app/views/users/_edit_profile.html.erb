@@ -1,7 +1,7 @@
     <div class="information">
       <div id="introduce">
         <h2>
-          地陪簡介：
+          地陪簡介：(*旅行者搜尋您時會立即看到您的簡介)
         </h2>
         <%= form_for(@user) do |f| %>
           <%= f.text_field :introduce, class: "form_text" %>
@@ -10,7 +10,7 @@
       </div>
       <div id="trip_plan">
         <h2>
-          旅行安排或建議：
+          旅行安排或建議：(*輸入您的行程安排，或是對旅行者的建議)
         </h2>
         <%= f.text_field :trip_plan, class: "form_text" %>
         <%= f.submit "確定更改", class: "btn" %>
@@ -18,14 +18,14 @@
       </div>
       <div id="guide">
         <h2>
-          地陪服務細節：
+          地陪服務細節：(*含收費與否與收費方式)
         </h2>
           <%= f.text_field :trip_detail, class: "form_text" %>
           <%= f.submit "確定更改", class: "btn" %>
       </div>
       <div id="contact">
         <h2>
-          聯絡方式：
+          聯絡方式：(*Local Friends秉持保護使用者的立場，不會主動透露您的email，因此請記得填寫聯絡方式，方便旅行者聯絡您^^)
         </h2>
           <%= f.text_field :contact, class: "form_text" %>
           <%= f.submit "確定更改", class: "btn" %>
@@ -37,4 +37,5 @@
           $('#user_contact').wysihtml5();
         </script>
       </div>
+      
     </div>

@@ -30,6 +30,7 @@
 
       <img src=<%if @user.profile_photo==""%><%= "http://goo.gl/gdibQ" %><%else %> <%= @user.profile_photo || "http://goo.gl/gdibQ" %><%end%> alt=<%= @user.name %> class="change_photo">
       <%= f.label :profile_photo, "更換大頭貼(網路圖片連結)" %>
+      <h5>取得連結教學：1.找到想要的圖片→2.圖片上點選右鍵→3.「複製圖片連結」→4.貼在下方空格→5.完成！</h5>
       <%= f.text_field :profile_photo %>
 
       <%= f.submit "確定更改", class: "btn btn-large btn-primary" %>

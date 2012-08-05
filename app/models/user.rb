@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, :if => :should_validate_password?
   validates :password_confirmation, presence: true, :if => :should_validate_password?
+  validates :country, presence: true
   attr_accessor :updating_password
 
   def should_validate_password?
