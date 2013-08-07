@@ -10,31 +10,18 @@
       </div>
       <div id="trip_plan">
         <h2>
-          旅行安排或建議：(*輸入您的行程安排，或是對旅行者的建議)
+          旅行安排與建議：(*輸入您的行程安排，或是對旅行者的建議，此外若地陪服務需要收費記得在此填寫)
         </h2>
         <%= f.text_field :trip_plan, class: "form_text" %>
         <%= f.submit "確定更改", class: "btn" %>
         
       </div>
-      <div id="guide">
-        <h2>
-          地陪服務細節：(*含收費與否與收費方式)
-        </h2>
-          <%= f.text_field :trip_detail, class: "form_text" %>
-          <%= f.submit "確定更改", class: "btn" %>
-      </div>
-      <div id="contact">
-        <h2>
-          聯絡方式：(*Local Friends秉持保護使用者的立場，不會主動透露您的email，因此請記得填寫聯絡方式，方便旅行者聯絡您^^)
-        </h2>
-          <%= f.text_field :contact, class: "form_text" %>
-          <%= f.submit "確定更改", class: "btn" %>
+      
         <% end %>
         <script type="text/javascript">
           $('#user_introduce').wysihtml5({"font-styles": false});
           $('#user_trip_plan').wysihtml5();
-          $('#user_trip_detail').wysihtml5();
-          $('#user_contact').wysihtml5();
+
         </script>
       </div>
       

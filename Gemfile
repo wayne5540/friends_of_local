@@ -4,6 +4,7 @@ gem 'rails', '3.2.6'
 gem 'bootstrap-sass', '2.0.0'
 gem "bootstrap-wysihtml5-rails", "~> 0.2.12"
 gem 'bcrypt-ruby', '3.0.1'
+gem 'therubyracer'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

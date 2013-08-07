@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727043709) do
+ActiveRecord::Schema.define(:version => 20130724151826) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "sex"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.string   "remember_token"
     t.string   "introduce"
@@ -29,8 +29,13 @@ ActiveRecord::Schema.define(:version => 20120727043709) do
     t.string   "country"
     t.string   "city"
     t.string   "language"
+    t.boolean  "chinese",         :default => false
+    t.boolean  "english",         :default => false
+    t.boolean  "japanese",        :default => false
+    t.string   "area"
   end
 
+  add_index "users", ["area"], :name => "index_users_on_area"
   add_index "users", ["city"], :name => "index_users_on_city"
   add_index "users", ["contact"], :name => "index_users_on_contact"
   add_index "users", ["country"], :name => "index_users_on_country"

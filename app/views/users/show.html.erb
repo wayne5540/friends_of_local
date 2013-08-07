@@ -19,12 +19,11 @@
       <span>
       
       <p>
-        <b>所在國家(區域):</b> <%= @user.country %>
+        <b>所在國家(區域):</b> <%= @user.area %>
       </p>
       <p><b>所在城市:</b> <%= @user.city %></p>
-      <p>
-        <b>使用語言:</b><%= @user.language %>
-      </p>
+      <p><b>E-mail:</b> <%= @user.email %></p>
+
     </div>
     <div class="clear"></div>
     <% if current_user?(@user) %>
@@ -33,8 +32,6 @@
     <div id="information" class="information">
       <%= render 'users/introduce' %>
       <%= render 'users/trip_plan' %>
-      <%= render 'users/trip_detail' %>
-      <%= render 'users/contact' %>
       <hr>
       <div id="fb_share">
         <h4>你的朋友或許會喜歡這趟旅程？</h4>

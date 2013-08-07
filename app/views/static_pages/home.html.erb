@@ -2,10 +2,13 @@
 <div class="center hero-unit">
   <h1>Welcome to Local Friends</h1>
 </br>
-  <p><b>如果您是熱愛旅行的朋友</b>，您可以在Local Friends找到世界各地的同好，帶您走訪他們最熟悉的故鄉、提供您最在地最特別的體驗，現在就搜尋地區吧。</p>
+  <p><b>如果您是熱愛旅行的朋友</b>，您可以在Local Friends找到世界各地的同好，帶您走訪他們最熟悉的故鄉、提供您最在地最特別的體驗，Local Friends現在提供<b>台灣地區的中文地陪</b>，現在就搜尋他們吧。</p>
 	<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
 		<p>
-			<%= select_tag "search" ,options_for_select([['台灣(Taiwan)','台灣(Taiwan)'],['日本(Japan)','日本(Japan)'],['南韓(South Korea)','南韓(South Korea)'],['中國(China)','中國(China)'],['歐洲(Europe)','歐洲(Europe)'],['美洲(America)','美洲(America)'],['大洋洲(Oceania)','大洋洲(Oceania)'],['非洲(Africa)','非洲(Africa)'],['其他(Others)','其他(Others)']], params[:search]) %>
+      <%= select_tag "country" ,options_for_select([['台灣','台灣']]) ,class: "span2 controls controls-row" %>
+      <%= select_tag "area" ,options_for_select([['北部','北部'],['中部','中部'],['南部','南部'],['東部','東部'],['離島','離島']]) ,class: "span2 controls controls-row" %>
+      <%= select_tag "search" ,options_for_select([['台北','台北',{ :class => '北部' }],['台中','台中',{ :class => '中部' }],['台南','台南',{ :class => '南部' }],['高雄','高雄',{ :class => '南部' }],['基隆','基隆',{ :class => '北部' }],['新竹','新竹',{ :class => '北部' }],['嘉義','嘉義',{ :class => '南部' }],['桃園','桃園',{ :class => '北部' }],['苗栗','苗栗',{ :class => '北部' }],['彰化','彰化',{ :class => '中部' }],['南投','南投',{ :class => '中部' }],['雲林','雲林',{ :class => '中部' }],['屏東','屏東',{ :class => '南部' }],['宜蘭','宜蘭',{ :class => '北部' }],['花蓮','花蓮',{ :class => '東部' }],['台東','台東',{ :class => '東部' }],['澎湖','澎湖',{ :class => '離島' }],['金門','金門',{ :class => '離島' }],['連江','連江',{ :class => '離島' }]],params[:search]),class: "span3 controls controls-row"
+      %>
 		    <%= submit_tag "找地陪", :name => nil, class: "btn btn-large btn-primary" %>
 		</p>
     <% end %>
@@ -17,7 +20,7 @@
     <h2>---OR---</h2>
 
     <p><b>如果您是熱愛分享的朋友</b>，您可以利用本平台找到更多您能夠幫助的旅行者，分享你對在地的知識與經驗，行程規劃和收費與否取決於您的選擇，歡迎加入Local Friends成為地陪，一起創造旅行的美好回憶。</p>
-  	<%= link_to "當地陪!", signup_path, class: "btn btn-large btn-primary" %>
+  	<%= link_to "註冊成為地陪", signup_path, class: "btn btn-large btn-info" %>
   <% end %>
 
   <div id="fb-root"><p></p></div>
@@ -29,5 +32,7 @@
   <hr>
 
   <span style="color:gray;"><i>------不建議使用IE系列瀏覽器------</i></span>
-
+<script type="text/javascript">
+  $("#search").chained("#area");
+</script>
 </div>

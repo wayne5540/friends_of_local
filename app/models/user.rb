@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :sex, :password, :password_confirmation, :contact, :trip_detail, :introduce, :trip_plan, :profile_photo, :country, :city, :language
+  attr_accessible :email, :name, :sex, :password, :password_confirmation, :contact, :trip_detail, :introduce, :trip_plan, :profile_photo, :country, :city, :language, :area
   has_secure_password
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, :if => :should_validate_password?
   validates :password_confirmation, presence: true, :if => :should_validate_password?
-  validates :country, presence: true
+  validates :area, presence: true
   attr_accessor :updating_password
 
   def should_validate_password?
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => { :country => search }, :order => 'updated_at DESC')
+      find(:all, :conditions => { :city => search }, :order => 'updated_at DESC')
     else
       find(:all, :order => 'updated_at DESC')
     end
