@@ -14,7 +14,7 @@
       <%= f.text_field :email %>
 
       <%= f.label :area, "所在區域(台灣)" %>
-      <%= f.select :area ,options_for_select([['北部','北部'],['中部','中部'],['南部','南部'],['東部','東部'],['離島','離島']]), {}, { :class => 'span3 controls controls-row' } %>
+      <%= f.select :area ,options_for_select([['北部','北部'],['中部','中部'],['南部','南部'],['東部','東部'],['離島','離島']]), {}, { :class => 'span3 controls controls-row' } %> 
       <%= f.select :city ,options_for_select([['台北','台北',{ :class => '北部' }],['台中','台中',{ :class => '中部' }],['台南','台南',{ :class => '南部' }],['高雄','高雄',{ :class => '南部' }],['基隆','基隆',{ :class => '北部' }],['新竹','新竹',{ :class => '北部' }],['嘉義','嘉義',{ :class => '南部' }],['桃園','桃園',{ :class => '北部' }],['苗栗','苗栗',{ :class => '北部' }],['彰化','彰化',{ :class => '中部' }],['南投','南投',{ :class => '中部' }],['雲林','雲林',{ :class => '中部' }],['屏東','屏東',{ :class => '南部' }],['宜蘭','宜蘭',{ :class => '北部' }],['花蓮','花蓮',{ :class => '東部' }],['台東','台東',{ :class => '東部' }],['澎湖','澎湖',{ :class => '離島' }],['金門','金門',{ :class => '離島' }],['連江','連江',{ :class => '離島' }]]), {}, { :class => 'span3 controls controls-row' }
       %>
 
